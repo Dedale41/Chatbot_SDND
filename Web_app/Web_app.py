@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_chat import message
-
+from ..agenda.agenda import add_new_print 
+import re
 
 st.set_page_config(page_title="Entreprise Imprimenligne & co",layout="centered")
 
@@ -14,6 +15,9 @@ if 'user_history' not in st.session_state:
 if 'message_count' not in st.session_state:
     st.session_state["message_count"]=1
 
+if 'agenda' not in st.session_state:
+    st.session_state["agenda"]=agenda=[[],[],[],[],[],[]]
+
 placeholder = st.empty()  # placeholder for the messages
 
 input_ = st.text_input("you:") # user input
@@ -23,6 +27,9 @@ if input_!='':
 
     st.session_state["message_history"].append("reponse")
     st.session_state["user_history"].append(False)
+
+    commande=re.split(' ',input)
+    st.write(commande)
 
 with placeholder.container(): #display all the messages
     for i in range(len(st.session_state["message_history"])):
