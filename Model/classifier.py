@@ -1,16 +1,12 @@
 from sklearn.pipeline import make_pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import accuracy_score
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import multilabel_confusion_matrix
-from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.model_selection import KFold
 from sklearn.model_selection import GridSearchCV
-import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
 import pickle
 import os 
 
