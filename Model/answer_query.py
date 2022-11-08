@@ -13,7 +13,11 @@ def find_pages_number(sentence) :
     return(None)
 
 def find_doc_name(sentence):
-    #aled
+    pattern = '[0-9a-zA-Z]+\.[pdf|doc|docx|odt]'
+    match = re.findall(pattern, sentence)
+    if match:
+        return(match[0])
+    return(None)
 
 
 if __name__ == "__main__":
