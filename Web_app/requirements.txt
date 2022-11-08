@@ -1,1 +1,2 @@
 streamlit-chat==0.0.2.1
+scikit-learn==1.1.3
